@@ -32,11 +32,11 @@ function bmlPanel(id, w, h) {
 }
 let t =
   "" +
-  (window.getSelection ?
-    window.getSelection() :
-    document.getSelection ?
-    document.getSelection() :
-    document.selection.createRange().text);
+  (window.getSelection
+    ? window.getSelection()
+    : document.getSelection
+    ? document.getSelection()
+    : document.selection.createRange().text);
 if (!t) {
   let L = document.location.href;
   if (
@@ -54,8 +54,7 @@ let Es = [
     "T-Wave",
     "http://nt-wave.mx.toyota.co.jp/tmc/twsearch/Pages/results.aspx?k=%%",
   ],
-  ["社内Bing", "https://www.bing.com/work/search?q=%%"],
-  ["ファイル検索(Office365)", "https://www.office.com/search?auth=2&q=%%"],
+  ["資料検索(Office365)", "https://www.office.com/search?auth=2&q=%%"],
   [
     "Outlook&Teams一括検索",
     "https://www.office.com/search/conversations?auth=2&q=%%",
@@ -74,6 +73,7 @@ let Es = [
     "従業員情報検索(Delve)",
     "https://jpn.delve.office.com/?q=%%&searchpage=1&searchview=people&v=search",
   ],
+  ["社内Bing", "https://www.bing.com/work/search?q=%%"],
   ["Toyota Wiki", "http://toyotawiki.au.toyota.co.jp/wiki/index.php?search=%%"],
   [
     "社内動画",
@@ -125,9 +125,10 @@ sbm.onclick = function () {
   for (i = 0; i < tc.length; i++) {
     if (tc[i].checked) {
       if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {
-        // window.open(tc[i].value.replace(/%%/, qt.value), "_blank");
       } else {
-        window.alert("ポップアップブロックが設定されていますので、「常に許可」に変更してください");
+        window.alert(
+          "ポップアップブロックが設定されていますので、「常に許可」に変更してください"
+        );
       }
     }
   }
