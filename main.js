@@ -8,9 +8,7 @@ function bmlPanel(id, w, h) {
   B.appendChild((P = D.createElement("div")));
   P.id = id;
   P.style.cssText =
-    " position:fixed; top:10px; left:50%; transform: translate(-50%);	padding:2px; width:" +
-    w +
-    "px; height:" +
+    " position:fixed; top:10px; left:50%; transform: translate(-50%);	padding:2px; width:90%; height:" +
     h +
     "px; opacity:1; 	filter:alpha(opacity = 80); background:#000; border:1px solid #666; color:#fff; font-size:12px; text-align:left; z-index:9998; -moz-border-radius:5px;";
   P.appendChild((H = D.createElement("div")));
@@ -34,11 +32,11 @@ function bmlPanel(id, w, h) {
 }
 let t =
   "" +
-  (window.getSelection
-    ? window.getSelection()
-    : document.getSelection
-    ? document.getSelection()
-    : document.selection.createRange().text);
+  (window.getSelection ?
+    window.getSelection() :
+    document.getSelection ?
+    document.getSelection() :
+    document.selection.createRange().text);
 if (!t) {
   let L = document.location.href;
   if (
@@ -57,7 +55,7 @@ let Es = [
     "http://nt-wave.mx.toyota.co.jp/tmc/twsearch/Pages/results.aspx?k=%%",
   ],
   ["社内Bing", "https://www.bing.com/work/search?q=%%"],
-  ["資料検索(Office365)", "https://www.office.com/search?auth=2&q=%%"],
+  ["ファイル検索(Office365)", "https://www.office.com/search?auth=2&q=%%"],
   [
     "Outlook&Teams一括検索",
     "https://www.office.com/search/conversations?auth=2&q=%%",
@@ -105,7 +103,7 @@ qt.value = t;
 qt.placeholder =
   "ここに検索ワードを入力。検索したいサイトに☑し「検索」ボタン押下";
 qt.style.cssText =
-  " display:block; width:90%; 	margin:6px; border:1px solid #666; background:transparent; color:inherit; font-weight:bold; font-size:20px; ";
+  " display:block; width:90%; 	margin:auto; margin-top:10px; margin-bottom:10px; border:1px solid #666; background:transparent; color:inherit; font-weight:bold; font-size:20px; ";
 for (i = 0; i < Es.length; i++) {
   C.appendChild((tc[i] = D.createElement("input")));
   C.appendChild((td[i] = D.createElement("div")));
@@ -126,7 +124,11 @@ sbm.style.cssText =
 sbm.onclick = function () {
   for (i = 0; i < tc.length; i++) {
     if (tc[i].checked) {
-      open(tc[i].value.replace(/%%/, qt.value), "_blank");
+      if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {
+        // window.open(tc[i].value.replace(/%%/, qt.value), "_blank");
+      } else {
+        window.alert("ポップアップブロックが設定されていますので、「常に許可」に変更してください");
+      }
     }
   }
 };
