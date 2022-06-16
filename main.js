@@ -32,11 +32,11 @@ function bmlPanel(id, w, h) {
 }
 let t =
   "" +
-  (window.getSelection ?
-    window.getSelection() :
-    document.getSelection ?
-    document.getSelection() :
-    document.selection.createRange().text);
+  (window.getSelection
+    ? window.getSelection()
+    : document.getSelection
+    ? document.getSelection()
+    : document.selection.createRange().text);
 if (!t) {
   let L = document.location.href;
   if (
@@ -121,6 +121,7 @@ for (i = 0; i < Es.length; i++) {
   tc[i].type = "checkbox";
   tc[i].name = i;
   tc[i].value = Es[i][1];
+  tc[i].title = Es[i][0];
   tc[i].style.cssText =
     " float:left; clear:left; display:block; margin:5px 6px;";
   td[i].innerHTML = Es[i][0];
@@ -137,7 +138,13 @@ sbm.onclick = function () {
   });
   for (i = 0; i < tc.length; i++) {
     if (tc[i].checked) {
-      if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {} else {
+      gtag("event", tc[i].title, {
+        event_category: "checkbox",
+        event_label: tc[i].title,
+        value: "0",
+      });
+      if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {
+      } else {
         window.alert(
           "ポップアップブロックが設定されていますので、「常に許可」に変更してください"
         );
