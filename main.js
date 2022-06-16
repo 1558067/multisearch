@@ -32,11 +32,11 @@ function bmlPanel(id, w, h) {
 }
 let t =
   "" +
-  (window.getSelection
-    ? window.getSelection()
-    : document.getSelection
-    ? document.getSelection()
-    : document.selection.createRange().text);
+  (window.getSelection ?
+    window.getSelection() :
+    document.getSelection ?
+    document.getSelection() :
+    document.selection.createRange().text);
 if (!t) {
   let L = document.location.href;
   if (
@@ -82,6 +82,14 @@ let Es = [
   [
     "トヨタITサービスマネジメント",
     "https://toyota1.service-now.com/sp?id=search&q=%%",
+  ],
+  [
+    "T-Binder(ページ遷移のみ)",
+    "http://doc-lib17-tb.au.toyota.co.jp/TB5_Try/BinderLibrary/default.aspx",
+  ],
+  [
+    "T-Click(ページ遷移のみ)",
+    "https://t-click.kitora.toyota.co.jp/AgileWorks/SSO/picus.jsp",
   ],
   ["Flickr", "http://www.flickr.com/search/?q=%%"],
   ["Wikipedia", "http://ja.wikipedia.org/wiki/%%"],
@@ -129,8 +137,7 @@ sbm.onclick = function () {
   });
   for (i = 0; i < tc.length; i++) {
     if (tc[i].checked) {
-      if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {
-      } else {
+      if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {} else {
         window.alert(
           "ポップアップブロックが設定されていますので、「常に許可」に変更してください"
         );
