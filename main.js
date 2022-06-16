@@ -122,6 +122,11 @@ sbm.innerHTML = "検索";
 sbm.style.cssText =
   " cursor:pointer; margin:6px auto; display:block; clear:both; font-size:15px;";
 sbm.onclick = function () {
+  gtag("event", "検索ボタンクリック", {
+    event_category: "button",
+    event_label: "検索ボタンクリック",
+    value: "0",
+  });
   for (i = 0; i < tc.length; i++) {
     if (tc[i].checked) {
       if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {
