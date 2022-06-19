@@ -91,6 +91,7 @@ let Es = [
     "T-Click(ページ遷移のみ)",
     "https://t-click.kitora.toyota.co.jp/AgileWorks/SSO/picus.jsp",
   ],
+  ["いらすとや", "https://www.irasutoya.com/search?q=%%"],
   ["Flickr", "http://www.flickr.com/search/?q=%%"],
   ["Wikipedia", "http://ja.wikipedia.org/wiki/%%"],
   ["英辞郎 ", "http://eow.alc.co.jp/%%/UTF-8/"],
