@@ -93,10 +93,10 @@ let Es = [
   ],
   ["いらすとや", "https://www.irasutoya.com/search?q=%%"],
   ["Flickr", "http://www.flickr.com/search/?q=%%"],
-  ["Wikipedia", "http://ja.wikipedia.org/wiki/%%"],
-  ["英辞郎 ", "http://eow.alc.co.jp/%%/UTF-8/"],
-  ["Amazon", "http://www.amazon.co.jp/exec/obidos/external-search/?keyword=%%"],
-  ["Youtube", "http://jp.youtube.com/results?search_query=%%"],
+  // ["Wikipedia", "http://ja.wikipedia.org/wiki/%%"],
+  // ["英辞郎 ", "http://eow.alc.co.jp/%%/UTF-8/"],
+  // ["Amazon", "http://www.amazon.co.jp/exec/obidos/external-search/?keyword=%%"],
+  // ["Youtube", "http://jp.youtube.com/results?search_query=%%"],
 ];
 let SP = bmlPanel("sp", 800);
 SP.header.innerHTML = "まとめて検索くん";
