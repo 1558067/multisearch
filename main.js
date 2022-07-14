@@ -84,7 +84,7 @@ let Es = [
     "https://toyota1.service-now.com/sp?id=search&q=%%",
   ],
   [
-    "Toyota Searcher(ページ遷移のみ)",
+    "ToyotaSearcher(ページ遷移のみ)",
     "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.aspx",
   ],
   [
