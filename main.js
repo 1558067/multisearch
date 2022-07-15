@@ -128,6 +128,7 @@ sbm.onclick = function () {
         window.alert(
           "ポップアップブロックが設定されていますので、「常に許可」に変更してください"
         );
+        break;
       }
     }
   }
