@@ -87,7 +87,7 @@ let sitesArray = [
   // ["Youtube", "http://jp.youtube.com/results?search_query=%%"],
 ];
 let main = mainPanel("main");
-let C = main.content,
+let mainContent = main.content,
   inputArea,
   checkInput = [],
   sitesTitle = [],
@@ -96,7 +96,7 @@ let C = main.content,
   tmp,
   form,
   checkbox;
-C.appendChild((form = Doc.createElement("form")));
+mainContent.appendChild((form = Doc.createElement("form")));
 form.className = "d-flex";
 form.appendChild((inputArea = Doc.createElement("input")));
 inputArea.className = "form-control me-2";
@@ -139,7 +139,7 @@ searchButton.onclick = function () {
   }
 };
 for (i = 0; i < sitesArray.length; i++) {
-  C.appendChild((checkbox = Doc.createElement("div")));
+  mainContent.appendChild((checkbox = Doc.createElement("div")));
   checkbox.className = "checkbox-inline";
   checkbox.appendChild((checkInput[i] = Doc.createElement("input")));
   checkbox.appendChild((sitesTitle[i] = Doc.createElement("label")));
