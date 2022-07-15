@@ -1,9 +1,8 @@
 #main {
   position: fixed;
-  top: 10px;
+  top: auto;
   left: 50%;
   transform: translate(-50%);
-  padding: 2px;
   width: 90%;
   opacity: 1;
   background: rgb(0, 0, 0);
@@ -11,15 +10,20 @@
   color: rgb(255, 255, 255);
   font-size: 12px;
   text-align: left;
-  z-index: 9998;
+}
+#navbar {
+  margin-top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 10px;
+  width: 90%;
 }
 
 #title {
-  padding: 0px 10px;
-  height: 20px;
+  padding: 0px;
   line-height: 20px;
   color: rgb(255, 255, 255);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
 }
@@ -28,16 +32,16 @@
   overflow: auto;
   background-color: rgb(34, 34, 34);
   color: rgb(238, 238, 238);
-  font-size: 15px;
-  cursor: auto;
+  font-size: 17px;
 }
 
 #inputArea {
-  display: block;
+  /* display: block; */
   width: 90%;
-  margin: 10px auto;
+  margin: auto;
+  margin-left: 5px;
   border: 1px solid rgb(102, 102, 102);
-  background: transparent;
+  background: white;
   color: inherit;
   font-weight: bold;
   font-size: 20px;
@@ -47,13 +51,16 @@
   float: left;
   clear: left;
   display: block;
-  margin: 5px 6px;
+  margin: 7px;
+  padding: auto;
+  position: relative;
+  top: 4px;
 }
 
 #searchBottun {
   cursor: pointer;
-  margin: 6px auto;
+  margin: 10px;
   display: block;
   clear: both;
-  font-size: 15px;
+  font-size: 20px;
 }

@@ -1,20 +1,18 @@
 "use strict";
 
-let D = document,
-  B = D.getElementsByTagName("body")[0];
+let Doc = document,
+  body = Doc.getElementsByTagName("body")[0];
 function mainPanel(id) {
-  let P, F, H;
-  B.appendChild((P = D.createElement("div")));
-  P.id = id;
-  P.appendChild((H = D.createElement("div")));
-  H.innerHTML = id;
-  H.id = "title";
-  P.appendChild((F = D.createElement("div")));
-  F.id = "sitesListArea";
-  P.appendChild(D.createElement("div"));
-  P.header = H;
-  P.content = F;
-  return P;
+  let panel, sitesListArea, headerName;
+  body.appendChild((panel = Doc.createElement("div")));
+  panel.id = id;
+  panel.appendChild((headerName = Doc.createElement("div")));
+  panel.appendChild((sitesListArea = Doc.createElement("div")));
+  sitesListArea.id = "sitesListArea";
+  panel.appendChild(Doc.createElement("div"));
+  panel.header = headerName;
+  panel.content = sitesListArea;
+  return panel;
 }
 let t =
   "" +
@@ -26,16 +24,16 @@ let t =
 if (!t) {
   let L = document.location.href;
   if (
-    L.match(/(yahoo\.).+?.*p=([^&]+)/) ||
+    L.match(/(yahoo\.).+?.*panel=([^&]+)/) ||
     L.match(/(amazon\.).+?.*field-keywords=([^&]+)/) ||
     L.match(/(\.wikipedia\.).+\/wiki\/([^\/]+)/) ||
     L.match(/(youtube\.).+search_query=([^&]+)/) ||
-    L.match(/(\?.*\b)q=([^&]+)/) ||
+    L.match(/(\?.*\body)q=([^&]+)/) ||
     L.match(/(\#search\/)([^\/]+)/)
   )
     t = decodeURIComponent(RegExp.$2);
 }
-let Es = [
+let sitesArray = [
   [
     "T-Wave",
     "http://nt-wave.mx.toyota.co.jp/tmc/twsearch/Pages/results.amainx?k=%%",
@@ -45,34 +43,30 @@ let Es = [
     "Outlook&Teams一括検索",
     "https://www.office.com/search/conversations?auth=2&q=%%",
   ],
+  [
+    "OneDrive",
+    "https://toyotajp-my.sharepoint.com/_layouts/15/onedrive.amainx?view=7&searchScope=all&q=%%",
+  ],
   ["Teams", "https://teams.microsoft.com/_#/apps/search?q=%%"],
   [
     "SharePoint",
     "https://toyotajp.sharepoint.com.mcas.ms/_layouts/15/sharepoint.amainx?q=%%&v=search",
   ],
-  [
-    "OneDrive",
-    "https://toyotajp-my.sharepoint.com/_layouts/15/onedrive.amainx?view=7&searchScope=all&q=%%",
-  ],
   ["Yammer", "https://web.yammer.com/main/search/threads?search=%%"],
-  [
-    "従業員情報検索(Delve)",
-    "https://jpn.delve.office.com/?q=%%&searchpage=1&searchview=people&v=search",
-  ],
-  ["社内Bing", "https://www.bing.com/work/search?q=%%"],
-  ["Toyota Wiki", "http://toyotawiki.au.toyota.co.jp/wiki/index.php?search=%%"],
-  [
-    "社内動画",
-    "https://web.microsoftstream.com/browse?q=%%&referrer=https:%2F%2Fpa-static-ms.azureedge.net%2F",
-  ],
   [
     "トヨタITサービスマネジメント",
     "https://toyota1.service-now.com/main?id=search&q=%%",
   ],
   [
-    "ToyotaSearcher(ページ遷移のみ)",
-    "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.amainx",
+    "従業員情報検索(Delve)",
+    "https://jpn.delve.office.com/?q=%%&searchpage=1&searchview=people&v=search",
   ],
+  ["社内Bing", "https://www.bing.com/work/search?q=%%"],
+  [
+    "社内動画",
+    "https://web.microsoftstream.com/browse?q=%%&referrer=https:%2F%2Fpa-static-ms.azureedge.net%2F",
+  ],
+  ["Toyota Wiki", "http://toyotawiki.au.toyota.co.jp/wiki/index.php?search=%%"],
   [
     "T-Binder(ページ遷移のみ)",
     "http://doc-lib17-tb.au.toyota.co.jp/TB5_Try/BinderLibrary/default.amainx",
@@ -80,6 +74,10 @@ let Es = [
   [
     "T-Click(ページ遷移のみ)",
     "https://t-click.kitora.toyota.co.jp/AgileWorks/SSO/picus.jmain",
+  ],
+  [
+    "ToyotaSearcher(ページ遷移のみ)",
+    "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.amainx",
   ],
   ["いらすとや", "https://www.irasutoya.com/search?q=%%"],
   ["Flickr", "http://www.flickr.com/search/?q=%%"],
@@ -89,49 +87,43 @@ let Es = [
   // ["Youtube", "http://jp.youtube.com/results?search_query=%%"],
 ];
 let main = mainPanel("main");
-main.header.innerHTML = "まとめて検索くん";
 let C = main.content,
   qt,
-  tc = [],
-  td = [],
+  checkInput = [],
+  sitesTitle = [],
   i,
   sbm,
-  tmp;
-C.appendChild((qt = D.createElement("input")));
+  tmp,
+  f,
+  checkbox;
+C.appendChild((f = Doc.createElement("form")));
+f.className = "d-flex";
+f.appendChild((qt = Doc.createElement("input")));
+qt.className = "form-control me-2";
 qt.value = t;
 qt.placeholder =
   "ここに検索ワードを入力。検索したいサイトに☑し「検索」ボタン押下";
 qt.id = "inputArea";
-for (i = 0; i < Es.length; i++) {
-  C.appendChild((tc[i] = D.createElement("input")));
-  C.appendChild((td[i] = D.createElement("div")));
-  C.appendChild((tmp = D.createElement("div")));
-  //td[i].url = Es[i][1];
-  tmp.style.cssText = "clear:both";
-  tc[i].type = "checkbox";
-  tc[i].name = i;
-  tc[i].value = Es[i][1];
-  tc[i].title = Es[i][0];
-  tc[i].id = "siteList";
-  td[i].innerHTML = Es[i][0];
-}
-C.appendChild((sbm = D.createElement("button")));
-sbm.innerHTML = "検索";
+qt.type = "search";
+f.appendChild((sbm = Doc.createElement("button")));
 sbm.id = "searchBottun";
+sbm.type = "button";
+sbm.className = "btn btn-primary text-nowrap";
+sbm.innerHTML = "検索";
 sbm.onclick = function () {
   gtag("event", "検索ボタンクリック", {
     event_category: "button",
     event_label: "検索ボタンクリック",
     value: "0",
   });
-  for (i = 0; i < tc.length; i++) {
-    if (tc[i].checked) {
-      gtag("event", tc[i].title, {
+  for (i = 0; i < checkInput.length; i++) {
+    if (checkInput[i].checked) {
+      gtag("event", checkInput[i].title, {
         event_category: "checkbox",
-        event_label: tc[i].title,
+        event_label: checkInput[i].title,
         value: "0",
       });
-      if (window.open(tc[i].value.replace(/%%/, qt.value), "_blank")) {
+      if (window.open(checkInput[i].value.replace(/%%/, qt.value), "_blank")) {
       } else {
         window.alert(
           "ポップアップブロックが設定されていますので、「常に許可」に変更してください"
@@ -140,3 +132,18 @@ sbm.onclick = function () {
     }
   }
 };
+for (i = 0; i < sitesArray.length; i++) {
+  C.appendChild((checkbox = Doc.createElement("div")));
+  checkbox.className = "checkbox-inline";
+  checkbox.appendChild((checkInput[i] = Doc.createElement("input")));
+  checkbox.appendChild((sitesTitle[i] = Doc.createElement("label")));
+  //sitesTitle[i].url = sitesArray[i][1];
+  checkInput[i].className = "form-check-input mt-0";
+  checkInput[i].type = "checkbox";
+  checkInput[i].name = i;
+  checkInput[i].value = sitesArray[i][1];
+  checkInput[i].title = sitesArray[i][0];
+  checkInput[i].id = "siteList";
+  sitesTitle[i].innerHTML = sitesArray[i][0];
+  sitesTitle[i].htmlFor = "siteList";
+}
