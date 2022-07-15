@@ -88,29 +88,29 @@ let sitesArray = [
 ];
 let main = mainPanel("main");
 let C = main.content,
-  qt,
+  inputArea,
   checkInput = [],
   sitesTitle = [],
   i,
-  sbm,
+  searchButton,
   tmp,
-  f,
+  form,
   checkbox;
-C.appendChild((f = Doc.createElement("form")));
-f.className = "d-flex";
-f.appendChild((qt = Doc.createElement("input")));
-qt.className = "form-control me-2";
-qt.value = t;
-qt.placeholder =
+C.appendChild((form = Doc.createElement("form")));
+form.className = "d-flex";
+form.appendChild((inputArea = Doc.createElement("input")));
+inputArea.className = "form-control me-2";
+inputArea.value = t;
+inputArea.placeholder =
   "ここに検索ワードを入力。検索したいサイトに☑し「検索」ボタン押下";
-qt.id = "inputArea";
-qt.type = "search";
-f.appendChild((sbm = Doc.createElement("button")));
-sbm.id = "searchBottun";
-sbm.type = "button";
-sbm.className = "btn btn-primary text-nowrap";
-sbm.innerHTML = "検索";
-sbm.onclick = function () {
+inputArea.id = "inputArea";
+inputArea.type = "search";
+form.appendChild((searchButton = Doc.createElement("button")));
+searchButton.id = "searchBottun";
+searchButton.type = "button";
+searchButton.className = "btn btn-primary text-nowrap";
+searchButton.innerHTML = "検索";
+searchButton.onclick = function () {
   gtag("event", "検索ボタンクリック", {
     event_category: "button",
     event_label: "検索ボタンクリック",
@@ -123,7 +123,12 @@ sbm.onclick = function () {
         event_label: checkInput[i].title,
         value: "0",
       });
-      if (window.open(checkInput[i].value.replace(/%%/, qt.value), "_blank")) {
+      if (
+        window.open(
+          checkInput[i].value.replace(/%%/, inputArea.value),
+          "_blank"
+        )
+      ) {
       } else {
         window.alert(
           "ポップアップブロックが設定されていますので、「常に許可」に変更してください"
