@@ -7,7 +7,7 @@ function getSiteList() {
     ["資料検索(Office365)", "https://www.office.com/search?auth=2&q=%%"],
     [
       "Outlook&Teams一括検索",
-      "https://www.office.com/search/conversations?auth=2&q=%%",
+      "https://www.bing.com/work/search?q=%%#Message-conversations",
     ],
     [
       "OneDrive",
