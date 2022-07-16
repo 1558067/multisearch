@@ -1,3 +1,7 @@
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/06/22/01/books-2596809_1280.jpg");
+}
+
 #main {
   position: relative;
   top: auto;
@@ -5,18 +9,21 @@
   transform: translate(-50%);
   width: 90%;
   opacity: 1;
-  background: rgb(0, 0, 0);
-  border: 1px solid rgb(102, 102, 102);
+  background: rgb(0 0 0 / 90%);
+  /* border: 1px solid rgb(102, 102, 102); */
   color: rgb(255, 255, 255);
   font-size: 12px;
   text-align: left;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 100%);
 }
 #navbar {
-  margin-top: 10px;
+  margin-top: 2em;
   left: 50%;
   transform: translate(-50%);
   padding: 10px;
   width: 90%;
+  /* border: 1px solid rgb(102, 102, 102); */
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 100%);
 }
 
 #title {
@@ -30,7 +37,7 @@
 
 #sitesListArea {
   overflow: auto;
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(34 34 34 / 20%);
   color: rgb(238, 238, 238);
   font-size: 17px;
 }
