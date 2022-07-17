@@ -5,4 +5,4 @@
 https://1558067.github.io/multisearch/
 
 # Author
-* [1558067](https://jpn.delve.office.com/?q=1558067&searchpage=1&searchview=people&v=search)
+[1558067](https://jpn.delve.office.com/?q=1558067&searchpage=1&searchview=people&v=search)
