@@ -11,7 +11,6 @@ body {
   width: 90%;
   opacity: 1;
   background: rgb(0 0 0 / 90%);
-  /* border: 1px solid rgb(102, 102, 102); */
   color: rgb(255, 255, 255);
   font-size: 12px;
   text-align: left;
@@ -23,7 +22,6 @@ body {
   transform: translate(-50%);
   padding: 10px;
   width: 90%;
-  /* border: 1px solid rgb(102, 102, 102); */
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 100%);
 }
 
@@ -45,25 +43,14 @@ body {
 }
 
 #inputArea {
-  /* display: block; */
   width: 90%;
   margin: auto;
-  margin-left: 5px;
+  margin-left: 0.5em;
   border: 1px solid rgb(102, 102, 102);
   background: white;
   color: black;
   font-weight: bold;
   font-size: 20px;
-}
-
-#siteList {
-  float: left;
-  clear: left;
-  display: block;
-  margin: 7px;
-  padding: auto;
-  position: relative;
-  top: 5px;
 }
 
 #searchBottun {
@@ -72,4 +59,14 @@ body {
   display: block;
   clear: both;
   font-size: 20px;
+}
+
+.checkbox-inline {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5em;
+}
+
+.form-check-label {
+  margin-left: 0.5em;
 }

@@ -102,4 +102,5 @@ for (i = 0; i < sitesArray.length; i++) {
   checkInput[i].id = "siteList";
   sitesTitle[i].innerHTML = sitesArray[i][0];
   sitesTitle[i].htmlFor = "siteList";
+  sitesTitle[i].className = "form-check-label";
 }
