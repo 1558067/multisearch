@@ -4,5 +4,5 @@
 # Usage
 https://1558067.github.io/multisearch/
 
-# Author
+# Developer
 [1558067](https://jpn.delve.office.com/?q=1558067&searchpage=1&searchview=people&v=search)
