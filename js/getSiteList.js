@@ -21,21 +21,21 @@ function getSiteList() {
       "https://toyotajp-my.sharepoint.com/_layouts/15/onedrive.amainx?view=7&searchScope=all&q=%%",
       "",
     ],
-    ["Teams", "https://teams.microsoft.com/_#/apps/search?q=%%", ""],
     [
       "SharePoint",
       "https://toyotajp.sharepoint.com.mcas.ms/_layouts/15/sharepoint.amainx?q=%%&v=search",
       "",
     ],
+    ["Teams", "https://teams.microsoft.com/_#/apps/search?q=%%", ""],
     ["Yammer", "https://web.yammer.com/main/search/threads?search=%%", ""],
-    [
-      "トヨタITサービスマネジメント",
-      "https://toyota1.service-now.com/main?id=search&q=%%",
-      "",
-    ],
     [
       "従業員情報検索(Delve)",
       "https://jpn.delve.office.com/?q=%%&searchpage=1&searchview=people&v=search",
+      "",
+    ],
+    [
+      "トヨタITサービスマネジメント",
+      "https://toyota1.service-now.com/main?id=search&q=%%",
       "",
     ],
     ["社内Bing", "https://www.bing.com/work/search?q=%%", ""],
@@ -45,10 +45,16 @@ function getSiteList() {
       "",
     ],
     [
+      "ToyotaSearcher(ページ遷移のみ)",
+      "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.amainx",
+      "",
+    ],
+    [
       "Toyota Wiki",
       "http://toyotawiki.au.toyota.co.jp/wiki/index.php?search=%%",
       "",
     ],
+
     [
       "T-Binder(ページ遷移のみ)",
       "http://doc-lib17-tb.au.toyota.co.jp/TB5_Try/BinderLibrary/default.amainx",
@@ -57,11 +63,6 @@ function getSiteList() {
     [
       "T-Click(ページ遷移のみ)",
       "https://t-click.kitora.toyota.co.jp/AgileWorks/SSO/picus.jmain",
-      "",
-    ],
-    [
-      "ToyotaSearcher(ページ遷移のみ)",
-      "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.amainx",
       "",
     ],
     ["いらすとや", "https://www.irasutoya.com/search?q=%%", ""],
