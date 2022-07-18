@@ -99,8 +99,9 @@ for (i = 0; i < sitesArray.length; i++) {
   checkInput[i].name = i;
   checkInput[i].value = sitesArray[i][1];
   checkInput[i].title = sitesArray[i][0];
-  checkInput[i].id = "siteList";
+  checkInput[i].id = sitesArray[i][0];
   sitesTitle[i].innerHTML = sitesArray[i][0];
-  sitesTitle[i].htmlFor = "siteList";
+  sitesTitle[i].htmlFor = sitesArray[i][0];
   sitesTitle[i].className = "form-check-label";
+  sitesTitle[i].title = sitesArray[i][2];
 }
