@@ -14,7 +14,7 @@ function getSiteList() {
     [
       "Outlook&Teams一括検索 β版",
       "https://www.bing.com/work/search?q=%%#Message-conversations",
-      "より多くの結果が表示されますが、うまく動作しないケースがあります",
+      "より多くの結果が表示されますが、うまく動作しないケースがあります。動作しない場合は、再度実行して下さい",
     ],
     [
       "OneDrive",
