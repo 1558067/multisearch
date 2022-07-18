@@ -5,11 +5,15 @@ function getSiteList() {
       "http://nt-wave.mx.toyota.co.jp/tmc/twsearch/Pages/results.amainx?k=%%",
       "",
     ],
-    ["資料検索(Office365)", "https://www.office.com/search?auth=2&q=%%", ""],
+    [
+      "資料検索(Office365)",
+      "https://www.office.com/search?auth=2&q=%%",
+      "Office365から各種ファイルを検索します",
+    ],
     [
       "Outlook&Teams一括検索",
       "https://www.office.com/search/conversations?auth=2&q=%%",
-      "",
+      "OutlookとTeamsを横串で検索し、結果を表示します",
     ],
     [
       "Outlook&Teams一括検索 β版",
@@ -31,7 +35,7 @@ function getSiteList() {
     [
       "従業員情報検索(Delve)",
       "https://jpn.delve.office.com/?q=%%&searchpage=1&searchview=people&v=search",
-      "",
+      "Delveを使用して、従業員情報を検索します",
     ],
     [
       "トヨタITサービスマネジメント",
@@ -47,7 +51,7 @@ function getSiteList() {
     [
       "ToyotaSearcher(ページ遷移のみ)",
       "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.amainx",
-      "",
+      "ページ遷移のみです。検索キーワードは別途入力が必要です",
     ],
     [
       "Toyota Wiki",
@@ -58,12 +62,12 @@ function getSiteList() {
     [
       "T-Binder(ページ遷移のみ)",
       "http://doc-lib17-tb.au.toyota.co.jp/TB5_Try/BinderLibrary/default.amainx",
-      "",
+      "ページ遷移のみです。検索キーワードは別途入力が必要です",
     ],
     [
       "T-Click(ページ遷移のみ)",
       "https://t-click.kitora.toyota.co.jp/AgileWorks/SSO/picus.jmain",
-      "",
+      "ページ遷移のみです。検索キーワードは別途入力が必要です",
     ],
     ["いらすとや", "https://www.irasutoya.com/search?q=%%", ""],
     ["Google 画像", "https://images.google.co.jp/images?q=%%", ""],
