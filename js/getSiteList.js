@@ -2,7 +2,7 @@ function getSiteList() {
   return [
     [
       "T-Wave",
-      "http://nt-wave.mx.toyota.co.jp/tmc/twsearch/Pages/results.amainx?k=%%",
+      "http://nt-wave.mx.toyota.co.jp/tmc/twsearch/Pages/results.aspx?k=%%",
       "",
     ],
     [
