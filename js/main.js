@@ -76,9 +76,7 @@ let mainContent = main.content,
   checkbox;
 mainContent.appendChild((form = Doc.createElement("form")));
 form.className = "d-flex";
-// form.addEventListener("submit", function () {
-//   return false;
-// });
+form.setAttribute("onsubmit", "return false;");
 form.appendChild((inputArea = Doc.createElement("input")));
 inputArea.className = "form-control me-2";
 inputArea.value = t;
