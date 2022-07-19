@@ -1,7 +1,5 @@
 "use strict";
 
-const Doc = document,
-  body = Doc.getElementsByTagName("body")[0];
 function mainPanel(id) {
   let panel, sitesListArea, headerName;
   body.appendChild((panel = Doc.createElement("div")));
@@ -15,52 +13,7 @@ function mainPanel(id) {
   return panel;
 }
 
-let t =
-  "" +
-  (window.getSelection
-    ? window.getSelection()
-    : document.getSelection
-    ? document.getSelection()
-    : document.selection.createRange().text);
-if (!t) {
-  let L = document.location.href;
-  if (
-    L.match(/(yahoo\.).+?.*panel=([^&]+)/) ||
-    L.match(/(amazon\.).+?.*field-keywords=([^&]+)/) ||
-    L.match(/(\.wikipedia\.).+\/wiki\/([^\/]+)/) ||
-    L.match(/(youtube\.).+search_query=([^&]+)/) ||
-    L.match(/(\?.*\body)q=([^&]+)/) ||
-    L.match(/(\#search\/)([^\/]+)/)
-  )
-    t = decodeURIComponent(RegExp.$2);
-}
-
-let sitesArray = getSiteList();
-
-let main = mainPanel("main");
-let mainContent = main.content,
-  inputArea,
-  checkInput = [],
-  sitesTitle = [],
-  i,
-  searchButton,
-  form,
-  checkbox;
-mainContent.appendChild((form = Doc.createElement("form")));
-form.className = "d-flex";
-form.appendChild((inputArea = Doc.createElement("input")));
-inputArea.className = "form-control me-2";
-inputArea.value = t;
-inputArea.placeholder =
-  "ここに検索ワードを入力。検索したいサイトに☑し「検索」ボタン押下";
-inputArea.id = "inputArea";
-inputArea.type = "search";
-form.appendChild((searchButton = Doc.createElement("button")));
-searchButton.id = "searchBottun";
-searchButton.type = "button";
-searchButton.className = "btn btn-primary text-nowrap";
-searchButton.innerHTML = "検索";
-searchButton.onclick = function () {
+function doSearch() {
   gtag("event", "検索ボタンクリック", {
     event_category: "button",
     event_label: "検索ボタンクリック",
@@ -87,7 +40,58 @@ searchButton.onclick = function () {
       }
     }
   }
-};
+}
+
+let t =
+  "" +
+  (window.getSelection
+    ? window.getSelection()
+    : document.getSelection
+    ? document.getSelection()
+    : document.selection.createRange().text);
+if (!t) {
+  let L = document.location.href;
+  if (
+    L.match(/(yahoo\.).+?.*panel=([^&]+)/) ||
+    L.match(/(amazon\.).+?.*field-keywords=([^&]+)/) ||
+    L.match(/(\.wikipedia\.).+\/wiki\/([^\/]+)/) ||
+    L.match(/(youtube\.).+search_query=([^&]+)/) ||
+    L.match(/(\?.*\body)q=([^&]+)/) ||
+    L.match(/(\#search\/)([^\/]+)/)
+  )
+    t = decodeURIComponent(RegExp.$2);
+}
+
+let sitesArray = getSiteList();
+const Doc = document,
+  body = Doc.getElementsByTagName("body")[0];
+let main = mainPanel("main");
+let mainContent = main.content,
+  inputArea,
+  checkInput = [],
+  sitesTitle = [],
+  i,
+  searchButton,
+  form,
+  checkbox;
+mainContent.appendChild((form = Doc.createElement("form")));
+form.className = "d-flex";
+// form.addEventListener("submit", function () {
+//   return false;
+// });
+form.appendChild((inputArea = Doc.createElement("input")));
+inputArea.className = "form-control me-2";
+inputArea.value = t;
+inputArea.placeholder =
+  "ここに検索ワードを入力。検索したいサイトに☑し「検索」ボタン押下";
+inputArea.id = "inputArea";
+inputArea.type = "search";
+form.appendChild((searchButton = Doc.createElement("button")));
+searchButton.id = "searchBottun";
+searchButton.type = "button";
+searchButton.className = "btn btn-primary text-nowrap";
+searchButton.innerHTML = "検索";
+searchButton.onclick = doSearch;
 for (i = 0; i < sitesArray.length; i++) {
   mainContent.appendChild((checkbox = Doc.createElement("div")));
   checkbox.className = "checkbox-inline";
