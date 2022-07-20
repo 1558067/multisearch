@@ -26,6 +26,11 @@ function getSiteList() {
       "",
     ],
     [
+      "OneNote",
+      "https://www.office.com/search?auth=2&q=%%&refiners=%7B%22FileType%22:%5B%22one%22%5D%7D",
+      "",
+    ],
+    [
       "SharePoint",
       "https://toyotajp.sharepoint.com.mcas.ms/_layouts/15/sharepoint.amainx?q=%%&v=search",
       "",
