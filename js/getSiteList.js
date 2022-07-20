@@ -1,4 +1,5 @@
 "use strict";
+
 function getSiteList() {
   return [
     [
@@ -60,7 +61,7 @@ function getSiteList() {
     ],
     [
       "ToyotaSearcher(ページ遷移のみ)",
-      "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.amainx",
+      "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.aspx",
       "ページ遷移のみです。検索キーワードは別途入力が必要です",
     ],
     [
@@ -69,14 +70,14 @@ function getSiteList() {
       "",
     ],
 
-    [
-      "T-Binder(ページ遷移のみ)",
-      "http://doc-lib17-tb.au.toyota.co.jp/TB5_Try/BinderLibrary/default.amainx",
-      "ページ遷移のみです。検索キーワードは別途入力が必要です",
-    ],
+    // [
+    //   "T-Binder(ページ遷移のみ)",
+    //   "http://doc-lib17-tb.au.toyota.co.jp/TB5_Try/BinderLibrary/default.amainx",
+    //   "ページ遷移のみです。検索キーワードは別途入力が必要です",
+    // ],
     [
       "T-Click(ページ遷移のみ)",
-      "https://t-click.kitora.toyota.co.jp/AgileWorks/SSO/picus.jmain",
+      "https://t-click.kitora.toyota.co.jp/AgileWorks/Broker/PicusSSO.sso_login",
       "ページ遷移のみです。検索キーワードは別途入力が必要です",
     ],
     ["いらすとや", "https://www.irasutoya.com/search?q=%%", ""],
