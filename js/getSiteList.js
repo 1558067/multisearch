@@ -35,7 +35,11 @@ function getSiteList() {
       "https://toyotajp.sharepoint.com.mcas.ms/_layouts/15/sharepoint.amainx?q=%%&v=search",
       "",
     ],
-    ["Teams", "https://teams.microsoft.com/_#/apps/search?q=%%", ""],
+    [
+      "Teams",
+      "https://teams.microsoft.com/_#/apps/search?q=%%",
+      "Teamsの制限により、検索結果を表示するにはTeams上の検索欄でEnterを押す必要があります",
+    ],
     ["Yammer", "https://web.yammer.com/main/search/threads?search=%%", ""],
     [
       "従業員情報検索(Delve)",
