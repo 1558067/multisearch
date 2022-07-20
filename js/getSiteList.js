@@ -50,7 +50,7 @@ function getSiteList() {
     ],
     [
       "トヨタITサービスマネジメント",
-      "https://toyota1.service-now.com/main?id=search&q=%%",
+      "https://toyota1.service-now.com/sp/?id=search&spa=1&q=%%",
       "",
     ],
     ["社内Bing", "https://www.bing.com/work/search?q=%%", ""],
