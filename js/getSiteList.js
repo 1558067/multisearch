@@ -8,7 +8,7 @@ function getSiteList() {
       "",
     ],
     [
-      "資料検索(Office365)",
+      "資料検索（Office365）",
       "https://www.office.com/search?auth=2&q=%%",
       "Office365から各種ファイルを検索します",
     ],
@@ -55,12 +55,17 @@ function getSiteList() {
     ],
     ["社内Bing", "https://www.bing.com/work/search?q=%%", ""],
     [
+      "社内帳票検索（ページ遷移のみ）",
+      "https://apps.powerapps.com/play/65452b86-5ef9-4672-8e45-6d454850aecb?tenantId=d1c1335e-f582-42a9-b6fe-5e1a16eb9bc8",
+      "ページ遷移のみです。検索キーワードは別途入力が必要です",
+    ],
+    [
       "社内動画",
       "https://web.microsoftstream.com/browse?q=%%&referrer=https:%2F%2Fpa-static-ms.azureedge.net%2F",
       "",
     ],
     [
-      "ToyotaSearcher(ページ遷移のみ)",
+      "ToyotaSearcher（ページ遷移のみ）",
       "http://nt-wave.mx.toyota.co.jp/tmc/2/fssearch/Wiki/2_dounyu/UrlList.aspx",
       "ページ遷移のみです。検索キーワードは別途入力が必要です",
     ],
@@ -69,14 +74,8 @@ function getSiteList() {
       "http://toyotawiki.au.toyota.co.jp/wiki/index.php?search=%%",
       "",
     ],
-
-    // [
-    //   "T-Binder(ページ遷移のみ)",
-    //   "http://doc-lib17-tb.au.toyota.co.jp/TB5_Try/BinderLibrary/default.amainx",
-    //   "ページ遷移のみです。検索キーワードは別途入力が必要です",
-    // ],
     [
-      "T-Click(ページ遷移のみ)",
+      "T-Click（ページ遷移のみ）",
       "https://t-click.kitora.toyota.co.jp/AgileWorks/Broker/PicusSSO.sso_login",
       "ページ遷移のみです。検索キーワードは別途入力が必要です",
     ],
