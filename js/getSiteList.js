@@ -24,7 +24,7 @@ function getSiteList() {
     ],
     [
       "OneDrive",
-      "https://toyotajp-my.sharepoint.com/_layouts/15/onedrive.amainx?view=7&searchScope=all&q=%%",
+      "https://toyotajp-my.sharepoint.com.mcas.ms/_layouts/15/onedrive.aspx?q=%%&&view=7&searchScope=all",
       "",
     ],
     [
