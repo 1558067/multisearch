@@ -42,14 +42,17 @@
         <div class="table-wrapper">
           <div class="table-title">
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-sm-12">
                 <h2><b>検索サイト設定画面（作成中）</b></h2>
+                <p>検索するサイトをカスタマイズすることができます。設定方法やサンプルは<a href="#">こちら</a>を参照ください。</p>
               </div>
-              <div class="col-sm-4">
-                <button type="button" class="btn btn-outline-primary add-new">
-                  <i class="fa fa-plus"></i> 新規追加
-                </button>
-              </div>
+            </div>
+            <div class="row">
+            <div class="col-12">
+              <button type="button" class="btn btn-outline-primary add-new" data-toggle="tooltip" title="新しいサイトを追加します">
+                <i class="fa fa-plus"></i> 新規追加
+              </button>
+            </div>
             </div>
             <table class="table table-bordered">
               <thead>
@@ -83,16 +86,17 @@
             </table>
           </div>
           <div class="row">
-            <div class="col-sm-4">
-              <button type="button" class="btn btn-outline-danger reset-table">
+            <div class="col-sm-5">
+              <button type="button" class="btn btn-outline-danger reset-table" data-toggle="tooltip" title="初期設定に戻します">
                 <i class="fa fa-repeat" aria-hidden="true"></i> リセット
               </button>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="btn btn-outline-success save-table">
+              <button type="button" class="btn btn-outline-success save-table" data-toggle="tooltip" title="内容を保存して、メインページに戻ります">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i> 保存して戻る
               </button>
             </div>
+          </div>
           </div>
         </div>
       </div>
