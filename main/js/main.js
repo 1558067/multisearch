@@ -1,4 +1,7 @@
 "use strict";
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
 function mainPanel(id) {
   let panel, sitesListArea, headerName;
@@ -104,6 +107,7 @@ for (i = 0; i < sitesArray.length; i++) {
   checkInput[i].id = sitesArray[i][0];
   sitesTitle[i].innerHTML = sitesArray[i][0];
   sitesTitle[i].htmlFor = sitesArray[i][0];
-  sitesTitle[i].className = "form-check-label";
+  sitesTitle[i].className =
+    "form-check-label data-toggle='tooltip' data-placement='right'";
   sitesTitle[i].title = sitesArray[i][2];
 }
