@@ -22,11 +22,11 @@ function getSiteList() {
       "https://www.bing.com/work/search?q=%%#Message-conversations",
       "より多くの結果が表示されますが、うまく動作しないケースがあります。動作しない場合は、再度実行して下さい",
     ],
-    [
-      "OneDrive",
-      "https://toyotajp-my.sharepoint.com.mcas.ms/_layouts/15/onedrive.aspx?q=%%&&view=7&searchScope=all",
-      "",
-    ],
+    // [
+    //   "OneDrive",
+    //   "https://toyotajp-my.sharepoint.com.mcas.ms/_layouts/15/onedrive.aspx?q=%%&&view=7&searchScope=all",
+    //   "",
+    // ],
     [
       "OneNote",
       "https://www.office.com/search?auth=2&q=%%&refiners=%7B%22FileType%22:%5B%22one%22%5D%7D",
