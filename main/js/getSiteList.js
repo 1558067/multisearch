@@ -34,7 +34,7 @@ function getSiteList() {
     ],
     [
       "SharePoint",
-      "https://toyotajp.sharepoint.com.mcas.ms/_layouts/15/sharepoint.amainx?q=%%&v=search",
+      "https://toyotajp.sharepoint.com.mcas.ms/_layouts/15/sharepoint.aspx?q=%%&v=search",
       "",
     ],
     [
